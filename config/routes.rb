@@ -1,3 +1,5 @@
+root "boards#index"
+
 Rails.application.routes.draw do
   get("/", { :controller => "boards", :action => "index" })
 
