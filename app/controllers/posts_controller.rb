@@ -24,7 +24,9 @@ class PostsController < ApplicationController
     the_post.expires_on = params.fetch("query_expires_on")
     the_post.board_id = params.fetch("query_board_id")
 
-    the_post.user_id = current_user.id
+    if current_user != nil 
+      the_post.user_id = current_user.id
+    end
 
     if the_post.valid?
       the_post.save
